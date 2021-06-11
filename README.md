@@ -1,0 +1,2 @@
+# programming_paradigms_006_functional_programming_exercises
+Programming languages paradigms discipline, assignment 006
