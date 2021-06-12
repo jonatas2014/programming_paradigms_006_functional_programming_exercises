@@ -23,10 +23,9 @@ compactar_aux a (head:tail) | repeticoes a (head:tail) > 1 = [repeticoes a (head
 --Compactação
 compactar :: [Int] -> [[Int]]
 compactar [] = [[]]
-compactar (head:tail) | (repeticoes head (head:tail) > 1) == True =
-                         compactar_aux head (head:tail): 
-                         compactar (drop (repeticoes head (head:tail)) (head:tail))
-                      | otherwise = [head]: compactar tail
+compactar (head:tail) = compactar_aux head (head:tail): 
+                        compactar (drop (repeticoes head (head:tail)) (head:tail))
+                      
 
 
 
