@@ -52,3 +52,12 @@ impar([Term|Y]) when Term rem 2 /= 0 ->
 	[Term|impar(Y)];
 impar([_|Y])  ->
 	impar(Y).
+
+ %%Questão 10
+tail_recursive_fib(N) ->
+	tail_recursive_fib(N, 1, 2, []).
+
+tail_recursive_fib(1, _Current, _Next, Fibs) ->
+    lists:reverse(Fibs);
+tail_recursive_fib(N, Current, Next, Fibs) -> 
+    tail_recursive_fib(N - 1, Next, Current + Next, [Current|Fibs]).
