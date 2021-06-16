@@ -55,9 +55,9 @@ impar([_|Y])  ->
 
  %%Questão 10
 tail_recursive_fib(N) ->
-	tail_recursive_fib(N, 1, 2, []).
+	tail_recursive_fib(N, 1, 1, []).
 
-tail_recursive_fib(1, _Current, _Next, Fibs) ->
+tail_recursive_fib(0, _Current, _Next, Fibs) ->
     lists:reverse(Fibs);
 tail_recursive_fib(N, Current, Next, Fibs) -> 
     tail_recursive_fib(N - 1, Next, Current + Next, [Current|Fibs]).
