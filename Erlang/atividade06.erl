@@ -1,5 +1,6 @@
 -module(atividade06).
--export([fac/1, fib/1, intercala/2, uniao/2, interseccao/2, sequencia/2, impar_par/1, par/1, impar/1, tail_recursive_fib/1, tail_fac/1]).
+-export([fac/1, fib/1, intercala/2, uniao/2, interseccao/2, sequencia/2, impar_par/1, par/1, impar/1, 
+	 generate/1, tail_fac/1, tail_recursive_fib/1]).
 
 %% Questão 1
 fac(1) ->
@@ -52,6 +53,14 @@ impar([Term|Y]) when Term rem 2 /= 0 ->
 	[Term|impar(Y)];
 impar([_|Y])  ->
 	impar(Y).
+
+%% Questão 8
+generate([]) -> [[]];
+generate([H|T]) -> PT = generate(T),
+  generate(H, PT, PT).
+
+generate(_, [], Acc) -> Acc;
+generate(X, [H|T], Acc) -> generate(X, T, [[X|H]|Acc]).
 
 
 %%Questão 10
