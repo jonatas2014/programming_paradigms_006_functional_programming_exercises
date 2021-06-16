@@ -1,5 +1,5 @@
 -module(atividade06).
--export([fac/1, fib/1, intercala/2, uniao/2, interseccao/2, sequencia/2, impar_par/1, par/1, impar/1, tail_recursive_fib/1]).
+-export([fac/1, fib/1, intercala/2, uniao/2, interseccao/2, sequencia/2, impar_par/1, par/1, impar/1, tail_recursive_fib/1, tail_fac/1]).
 
 %% Questão 1
 fac(1) ->
